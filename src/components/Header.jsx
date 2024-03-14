@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Header = () => {
-  // Define toggleMenu function here
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const toggleMenu = () => {
-    // Implement your toggleMenu logic here
-    console.log("Menu toggled");
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleMenuItemClick = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+      setIsMenuOpen(false); // Close the menu after clicking on a menu item
+    }
   };
 
   return (
@@ -19,10 +27,14 @@ const Header = () => {
       <div className="menu-icon" onClick={toggleMenu}>
         <i className="fas fa-bars"></i>
       </div>
-      <nav className="menu">
+      <nav className={`menu ${isMenuOpen ? "open" : ""}`}>
         <ul className="nav_links">
           <li>
-            <a href="#" className="nav_link" data-section="aboutme">
+            <a
+              href="#"
+              className="nav_link"
+              onClick={() => handleMenuItemClick("aboutme")}
+            >
               About
             </a>
           </li>
@@ -31,7 +43,7 @@ const Header = () => {
               title="Not working yet"
               href="#"
               className="nav_link"
-              data-section="experience"
+              onClick={() => handleMenuItemClick("experience")}
             >
               Experience
             </a>
@@ -41,13 +53,17 @@ const Header = () => {
               title="Not working yet"
               href="#"
               className="nav_link"
-              data-section="project"
+              onClick={() => handleMenuItemClick("project")}
             >
               Project
             </a>
           </li>
           <li>
-            <a href="#" className="nav_link" data-section="contact">
+            <a
+              href="#"
+              className="nav_link"
+              onClick={() => handleMenuItemClick("contact")}
+            >
               Contact
             </a>
           </li>
