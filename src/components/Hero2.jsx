@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react'
 
-const Hero = () => {
+const Hero2 = () => {
   return (
     <>
     <div className="firstpage">
@@ -17,8 +17,7 @@ const Hero = () => {
       </div>
     
     </>
-      
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero2

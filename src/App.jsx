@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './components/Header';
-import Hero from './components/Hero';
+
+import Hero2 from './components/Hero2';
 import Project from './components/Project';
 import About from './components/About';
 import Experience from './components/Experience';
@@ -11,8 +12,8 @@ import './index.css';
 const App = () => {
     return (
         <div>
-            <Header />
-            <Hero />
+            <Header />   
+            <Hero2/>
             <Experience />
             <Project />
             <About />
@@ -20,6 +21,8 @@ const App = () => {
             <Footer />
             
         </div>
+
+
     );
 };
 
