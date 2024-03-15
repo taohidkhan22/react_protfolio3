@@ -1,6 +1,6 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-
 import Hero2 from './components/Hero2';
 import Project from './components/Project';
 import About from './components/About';
@@ -11,18 +11,19 @@ import './index.css';
 
 const App = () => {
     return (
-        <div>
-            <Header />   
-            <Hero2/>
-            <Experience />
-            <Project />
-            <About />
-            <Contact />
-            <Footer />
-            
-        </div>
-
-
+        <Router>
+            <div>
+                <Header />   
+                <Hero2/>
+                <Routes>
+                    <Route path="/experience" element={<Experience />} />
+                    <Route path="/project" element={<Project />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/contact" element={<Contact />} />
+                </Routes>
+                <Footer />
+            </div>
+        </Router>
     );
 };
 

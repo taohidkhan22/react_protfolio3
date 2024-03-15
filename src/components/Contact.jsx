@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Contact = () => {
     return (
@@ -23,7 +24,7 @@ const Contact = () => {
                             <div className="form-group">
                                 <textarea name="message" placeholder="Your Message"></textarea>
                             </div>
-                            <button>Send Massage</button>
+                            <button>Send Message</button>
                         </form>
                     </div>
                     <div className="contact-info">
@@ -34,6 +35,9 @@ const Contact = () => {
                     </div>
                 </div>
             </div>
+            <Link to="/about" className="nav_link">
+                <button>Back to About</button>
+            </Link>
         </section>
     );
 };

@@ -1,5 +1,7 @@
+
 import React from 'react';
-import taohidpicture from '../assets/images/image2 new.jpg'
+import taohidpicture from '../assets/images/image2 new.jpg';
+import { Link } from 'react-router-dom';
 
 const About = () => {
     return (
@@ -28,6 +30,9 @@ const About = () => {
                         Phasellus eget ex at est lobortis iaculis eget non risus. Etiam ultricies at est sit amet
                         condimentum.
                     </p>
+                    <Link to="/contact" className="nav_link">
+                        <button>Contact Me</button>
+                    </Link>
                 </div>
                 <div className="photo">
                     <img src={taohidpicture} height="160" width="" />

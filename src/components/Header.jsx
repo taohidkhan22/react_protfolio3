@@ -1,80 +1,62 @@
 import React, { useState } from "react";
-import logoimage from '../assets/images/taohid.png'
+import { Link } from 'react-router-dom';
+import logoimage from '../assets/images/taohid.png';
+
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    const handleMenuItemClick = (sectionId) => {
+      const section = document.getElementById(sectionId);
+      if (section) {
+          window.scrollTo({
+              behavior: "smooth",
+              top: section.offsetTop
+          });
+      }
   };
 
-  const handleMenuItemClick = (sectionId) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-      setIsMenuOpen(false); 
-    }
-  };
-
-  return (
-    <header>
-      <img
-        src={logoimage}
-        width="50px"
-        height="50px"
-        style={{ marginLeft: "0px" }}
-        alt=""
-      />
-      <div className="menu-icon" onClick={toggleMenu}>
-        <i className="fas fa-bars"></i>
-      </div>
-      <nav className={`menu ${isMenuOpen ? "open" : ""}`}>
-        <ul className="nav_links">
-          <li>
-            <a
-              href="#"
-              className="nav_link"
-              onClick={() => handleMenuItemClick("aboutme")}
-            >
-              About
+    return (
+        <header>
+            <img
+                src={logoimage}
+                width="50px"
+                height="50px"
+                style={{ marginLeft: "0px" }}
+                alt=""
+            />
+            <div className="menu-icon" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                <i className="fas fa-bars"></i>
+            </div>
+            <nav className={`menu ${isMenuOpen ? "open" : ""}`}>
+                <ul className="nav_links">
+                    <li>
+                        <Link to="/about" className="nav_link" onClick={() => handleMenuItemClick("aboutme")}>
+                            About
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/experience" className="nav_link" onClick={() => handleMenuItemClick("experience")}>
+                            Experience
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/project" className="nav_link" onClick={() => handleMenuItemClick("project")}>
+                            Project
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/contact" className="nav_link" onClick={() => handleMenuItemClick("contact")}>
+                            Contact
+                        </Link>
+                    </li>
+                </ul>
+            </nav>
+            <a className="bt" href="#a">
+                <button>Resume</button>
+                <button>Hire Me</button>
             </a>
-          </li>
-          <li>
-  <a
-    title="Not working yet"
-    href="#"
-    className="nav_link"
-    onClick={() => handleMenuItemClick("experience")}
-  >
-    Experience
-  </a>
-</li>
-<li>
-  <a
-    title="Not working yet"
-    href="#"
-    className="nav_link"
-    onClick={() => handleMenuItemClick("project")}
-  >
-    Project
-  </a>
-</li>
-          <li>
-            <a
-              href="#"
-              className="nav_link"
-              onClick={() => handleMenuItemClick("contact")}
-            >
-              Contact
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <a className="bt" href="#a">
-        <button>Resume</button>
-        <button>Hire Me</button>
-      </a>
-    </header>
-  );
+        </header>
+    );
 };
 
 export default Header;
