@@ -39,25 +39,25 @@ const Header = () => {
             </a>
           </li>
           <li>
-            <a
-              title="Not working yet"
-              href="#"
-              className="nav_link"
-              onClick={() => handleMenuItemClick("experience")}
-            >
-              Experience
-            </a>
-          </li>
-          <li>
-            <a
-              title="Not working yet"
-              href="#"
-              className="nav_link"
-              onClick={() => handleMenuItemClick("project")}
-            >
-              Project
-            </a>
-          </li>
+  <a
+    title="Not working yet"
+    href="#"
+    className="nav_link"
+    onClick={() => handleMenuItemClick("experience")}
+  >
+    Experience
+  </a>
+</li>
+<li>
+  <a
+    title="Not working yet"
+    href="#"
+    className="nav_link"
+    onClick={() => handleMenuItemClick("project")}
+  >
+    Project
+  </a>
+</li>
           <li>
             <a
               href="#"
