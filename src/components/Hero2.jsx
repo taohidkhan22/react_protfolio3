@@ -1,6 +1,6 @@
 import React from 'react'
 import heroarrow from '../assets/images/hero-arrow.png'
-
+import "./Hero2.scss"
 const Hero2 = () => {
   return (
     <>
