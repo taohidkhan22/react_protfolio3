@@ -1,4 +1,5 @@
 import React from 'react'
+import heroarrow from '../assets/images/hero-arrow.png'
 
 const Hero2 = () => {
   return (
@@ -11,7 +12,7 @@ const Hero2 = () => {
         <div className="heroarro">
           <a href="#aboutme">
            
-            <img src="./src/assets/images/hero-arrow.png" alt="" />
+            <img src={heroarrow} alt="" />
           </a>
         </div>
       </div>

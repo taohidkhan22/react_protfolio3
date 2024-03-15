@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Link, Outlet } from "react-router-dom";
-
+import logoimage from '../assets/images/taohid.png'
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -12,14 +11,14 @@ const Header = () => {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
-      setIsMenuOpen(false); // Close the menu after clicking on a menu item
+      setIsMenuOpen(false); 
     }
   };
 
   return (
     <header>
       <img
-        src="./src/assets/images/taohid.png"
+        src={logoimage}
         width="50px"
         height="50px"
         style={{ marginLeft: "0px" }}

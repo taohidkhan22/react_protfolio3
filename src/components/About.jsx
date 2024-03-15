@@ -1,4 +1,5 @@
 import React from 'react';
+import taohidpicture from '../assets/images/image2 new.jpg'
 
 const About = () => {
     return (
@@ -29,7 +30,7 @@ const About = () => {
                     </p>
                 </div>
                 <div className="photo">
-                    <img src="./src/assets/images/image2 new.jpg" height="160" width="" />
+                    <img src={taohidpicture} height="160" width="" />
                 </div>
             </div>
         </div>
