@@ -1,1 +1,1 @@
-Previously resume (which is raw html, js, css) converted into React, but does not work properly need some time to work out properly
+This project involves the conversion of an existing static resume, originally created using raw HTML, CSS, and JavaScript, into a dynamic and modular React application. The initial conversion has been completed; however, the React-based resume is not functioning as expected. 
